@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.3.0/css/swiper.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-txt1">
+            <i class="fa fa-group fa1"></i>
+            <h2>座位表</h2>
+        </div>
+        <div class="header-txt2">
+            <a href="#"><p class="header-btn"><i class="fa fa-caret-down"></i>使用提示</p></a>
+            <p class="header-content">点击学员信息可来回切换选中效果。</p>
+        </div>
+        <div class="header-title">
+            <h3>座位</h3>
+        </div>
+        <div class="row" id="header">
+            <div class="col-md-3" v-for="(list,index) in lists">
+                <p>{{index+1}}组</p>
+                <div class="line" v-for="(l,index2) in list" :class="{active: lists[index][index2].bool}" @click="thisclick(index,index2)">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="img/user.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="sheet-p1"><i class="fa fa-desktop"></i>{{l.seat}}</a>
+                            <p class="sheet-p2">{{l.post}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>{{l.name}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.3.0/js/swiper.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
